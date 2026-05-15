@@ -7,9 +7,8 @@ export const globalErrorHandler = (
   err: any,
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
-
   let statusCode = 500;
   let message = "Something Went Wrong!!";
 
@@ -27,7 +26,7 @@ export const globalErrorHandler = (
     message = err.message;
   }
 
-    // ✅ Zod Error (IMPORTANT)
+  // ✅ Zod Error (IMPORTANT)
   else if (err instanceof ZodError) {
     statusCode = 400;
 
